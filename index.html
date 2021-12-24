@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <header>
+        <title>Meu Contador</title>
+        <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                background: black;
+                color: white;
+                display: grid;
+                place-items: center;
+            }
+
+            p {
+                font-size: 100px;
+            }
+
+            section {
+                background: rgba(255, 255, 255, 15%);
+                padding: 20px;
+                text-align: center;
+                border-radius: 20px;
+            }
+        </style>
+    </header>
+
+    <body>
+        <section>
+            <h1>Contador</h1>
+            <p id="resultado">0</p>
+            <button onclick="sobe()">sobe</button>
+            <button onclick="desce()">desce</button>
+        </section>
+        <script>
+            // estado da minha aplicação
+            let valor = 0;
+
+            //alterando estado da aplicação
+            function sobe() {
+                valor++
+                //valor = valor + 1
+                mostrar()
+            }
+            
+            function desce() {
+                valor--
+                //valor = valor - 1
+                mostrar()
+            }
+
+            // apresentando o estado da aplicação em tela
+            function mostrar() {
+                const p = document.querySelector("#resultado")
+                //const p = document.getElementById("resultado") // outra alternativa
+                p.innerText = valor
+            }
+        </script>
+    </body>
+
+</html>
